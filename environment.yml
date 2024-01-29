@@ -1,0 +1,8 @@
+name: 1trc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - dask
+  - coiled
+  - s3fs
