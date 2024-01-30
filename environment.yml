@@ -4,5 +4,6 @@ channels:
 dependencies:
   - python=3.12
   - dask
+  - dask-expr
   - coiled
   - s3fs
