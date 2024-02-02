@@ -1,3 +1,6 @@
+# This script was adapted from Jacob Tomlinson's 1BRC submission
+# https://github.com/gunnarmorling/1brc/discussions/487
+
 import os
 import tempfile
 import coiled
