@@ -1,3 +1,6 @@
+# This script was adapted from Jacob Tomlinson's 1BRC submission
+# https://github.com/gunnarmorling/1brc/discussions/487
+
 import os
 import tempfile
 import coiled
@@ -10,7 +13,7 @@ n = 1_000_000_000_000  # Total number of rows of data to generate
 chunksize = 10_000_000  # Number of rows of data per file
 std = 10.0  # Assume normally distributed temperatures with a standard deviation of 10
 lookup_df = pd.read_csv("lookup.csv")  # Lookup table of stations and their mean temperatures
-bucket = "s3://oss-scratch-space/1trc"
+bucket = "s3://coiled-datasets-rp/1trc"
 
 
 def generate_chunk(partition_idx, bucket, chunksize, std, lookup_df):
@@ -35,10 +38,10 @@ def generate_chunk(partition_idx, bucket, chunksize, std, lookup_df):
     df.station = df.station.map(lookup_df.station)
 
     # Save this chunk to the output file
-    filename = f"measurements-{partition_idx}.txt"
+    filename = f"measurements-{partition_idx}.parquet"
     with tempfile.TemporaryDirectory() as tmpdir:
         local = os.path.join(tmpdir, filename)
-        df.to_csv(local, sep=";", header=False, index=False)
+        df.to_parquet(local, engine="pyarrow")
         fs = fsspec.filesystem("s3")
         fs.put(local, f"{bucket}/{filename}")
 
