@@ -4,7 +4,7 @@ Inspired by Gunnar Morling's [one billion row challenge](https://github.com/gunn
 
 ## Data Generation
 
-You can generate the dataset yourself using the [data generation script](generate_data.py). We've also hosted the dataset in a requester pays S3 bucket s3://coiled-datasets-rp/1trc in `us-east-1`. 
+You can generate the dataset yourself using the [data generation script](generate_data.py). We've also hosted the dataset in a requester pays S3 bucket `s3://coiled-datasets-rp/1trc` in `us-east-1`. 
 
 It draws a random sample of weather stations and normally distributed temperatures drawn from the mean for each station based on the values in [lookup.csv](lookup.csv).
 ## The Challenge
