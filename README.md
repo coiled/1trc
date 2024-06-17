@@ -2,7 +2,7 @@
 
 Inspired by Gunnar Morling's [one billion row challenge](https://github.com/gunnarmorling/1brc), we thought we'd take things one step further and start the one trillion row challenge (1TRC).
 
-We describe the 1TRC, dataset, and running the challenge with [Dask](https://www.dask.org/) on [Coiled](https://www.coiled.io/) in [this blog post](https://medium.com/coiled-hq/one-trillion-row-challenge-5bfd4c3b8aef).
+We describe the 1TRC, dataset, and running the challenge with Dask on Coiled in [this blog post](https://docs.coiled.io/blog/1trc.html).
 
 ## The Challenge
 
